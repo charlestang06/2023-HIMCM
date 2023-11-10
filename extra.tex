@@ -1,0 +1,26 @@
+\begin{equation*}
+    \textbf{RS} = \begin{bNiceMatrix}[first-row,first-col]
+    & SA & \Delta E & W & S & R & D & \\
+    \text{Sports Complex } (b_1) & SA(c_i) & \Delta E(c_i) & W(c_i) & \int\limits_0^n S(t)dt &  \int\limits_0^n R(t)dt & D(c_i) & \\
+    \text {Ski Facility } (b_2) & \cdots &  &  & &  &  &  \\
+    \text{Crop Farm } (b_3) &  &  \cdots &  &  &  &  &  \\
+    \text{Grazing Farm } (b_4) &  &  & \cdots &  &  &  &  \\
+    \text{Regen. Farm } (b_5) &  &  &  & \cdots &  &  &  \\
+    \text{Solar Array } (b_6) &  &  &  &  & \cdots &  &  \\
+    \text{Agrivoltaic Farm } (b_7) &  &  &  &  &  & \cdots &  \\
+    \end{bNiceMatrix}
+\end{equation*}
+
+\begin{equation}
+    \textbf{HL} = \begin{bNiceMatrix}[first-row,first-col]
+    & SA & \Delta E & W & S & R & D & Ec \\
+    \text{Outdoor Sports Complex} & 1 & -1 & 0 & 1 & 0 & 0 & 1 \\
+    \text {Ski Facility} & 1 & 1 & 1 & 0 & -1 & -1 & 1 \\
+    \text{Crop Farm} & 1 & -1 & 1 & 1 & 1 & 1 & 1 \\
+    \text{Grazing Farm} & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\
+    \text{Regenerative Farm} & 1 & 0 & 0 & 1 & 1 & -1 & 1 \\
+    \text{Solar Array} & 1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+    \text{Agrivoltaic Farm} & 1 & -1 & 1 & 1 & 1 & 1 & 1 \\
+    \text{Agritourist Center} & 1 & -1 & 1 & 1 & 0 & -1 & 1 \\
+    \end{bNiceMatrix}
+\end{equation}

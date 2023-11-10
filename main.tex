@@ -1,0 +1,119 @@
+\documentclass{class}
+\mcmsetup{CTeX = false,
+        tcn = 14632, problem = A,
+        sheet = true, titleinsheet = false, keywordsinsheet = false,
+        titlepage = false, abstract = false}
+\setlength{\headheight}{13.6pt}
+\usepackage{bookman}
+%\usepackage{times}
+%to get dummy loremipsum text
+\usepackage{lipsum}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{blkarray}
+\usepackage{caption}
+\usepackage{nicematrix}
+\usepackage{longtable}
+\usepackage{xltabular}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{algorithm2e}
+\usepackage{titlesec}
+\RestyleAlgo{ruled}
+\usepackage{pdfpages}
+% \usepackage{newpxtext,newpxmath}
+\usepackage[numbib,nottoc]{tocbibind}
+\usepackage[svgnames]{xcolor}
+\usepackage{multicol}
+
+%for unknown reason, including the following packages changes the style of the contents section
+% \usepackage{multicol}
+% \usepackage{tocloft}
+% \usepackage{titletoc}
+\title{HiMCM}
+
+%% CODE FORMATTING COMMAND
+\newcommand{\insertcode}[2]{
+    % #1 is what filename shows up as
+    % #2 is what actual filepath is
+    \textcolor[rgb]{0.98,0.00,0.00}{\texttt{\textbf{#1}}}
+    \vspace{0.2em}
+    \hrule
+    \begin{multicols}{2}
+    \inputminted[breaklines, breakanywhere=true, breaksymbolleft=, breaksymbolright=, numbersep=5pt, xleftmargin=\parindent, style=vs, fontsize=\tiny]{python}{#2}
+    \end{multicols}
+    \hrule
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Assumption Table Numbering
+\newcounter{assumption}
+\newcommand{\nextassumption}{\refstepcounter{assumption}\arabic{assumption}}
+%%%%%%%%%%%%%%%%%%
+
+%% SMALL CAPS FONT
+\renewcommand{\theFancyVerbLine}{\sffamily\textcolor{gray}{\scriptsize\arabic{FancyVerbLine}\hspace{8pt}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% TITLE PAGE . SUMMARY PAGE FORMATTING
+\titleformat{\section}[block]
+{\fontfamily{cmr}\centering\large\scshape\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}
+{0pt}{2.5ex plus 1ex minus .2ex}{2.5ex plus .2ex}
+\date{\today}
+\begin{document}
+\begin{abstract}
+Write summary sheet here
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$
+
+\maketitle
+
+% \centerline{\fontfamily{cmr}\centering\large\scshape\bfseries{Infographic/Letter/Etc}}
+
+% infographic, letter, etc.
+
+% \newpage
+
+\tableofcontents
+
+\newpage
+
+\input{Sections/introduction}
+
+%% MODEL 1
+\input{Sections/model1method}
+
+\input{Sections/model1results}
+
+\input{Sections/model1discussion}
+
+%% MODEL 2
+
+\input{Sections/model2method}
+
+\input{Sections/model2results}
+
+\input{Sections/model2discussion}
+
+\input{Sections/conclusion}
+
+\newpage
+
+\bibliographystyle{abbrv}
+{\tiny
+\bibliography{HiMCM}
+}
+
+\pagebreak
+
+\input{Sections/appendix}
+
+\end{document}
+
+
