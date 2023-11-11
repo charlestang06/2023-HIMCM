@@ -30,6 +30,10 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{multicol}
 
+%%% BIB SPACING
+\usepackage{bibspacing}
+\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+
 %for unknown reason, including the following packages changes the style of the contents section
 % \usepackage{multicol}
 % \usepackage{tocloft}
@@ -44,9 +48,8 @@
     \vspace{0.2em}
     \hrule
     \begin{multicols}{2}
-    \inputminted[breaklines, breakanywhere=true, breaksymbolleft=, breaksymbolright=, numbersep=5pt, xleftmargin=\parindent, style=vs, fontsize=\tiny]{python}{#2}
+    \inputminted[breaklines, linenos, breakanywhere=true, breaksymbolleft=, breaksymbolright=, numbersep=5pt, xleftmargin=\parindent, style=vs, fontsize=\tiny]{python}{#2}
     \end{multicols}
-    \hrule
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -68,7 +71,13 @@
 \date{\today}
 \begin{document}
 \begin{abstract}
-Write summary sheet here
+
+\begin{center}
+{\fontfamily{cmr}\large\scshape\bfseries Summary}
+\end{center}
+
+\input{Sections/summary}
+
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$
 
@@ -106,7 +115,8 @@ Write summary sheet here
 \newpage
 
 \bibliographystyle{abbrv}
-{\tiny
+
+{\scriptsize
 \bibliography{HiMCM}
 }
 

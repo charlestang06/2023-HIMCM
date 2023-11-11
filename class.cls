@@ -84,16 +84,19 @@
 
 \setlength\parskip{.5\baselineskip}
 \renewcommand\tableofcontents{%
-    \centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
+        \centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
         \@mkboth{%
            \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
-    \vskip 2ex%
-    \setlength{\parskip}{0.15em}
+    \vskip 5ex%
+    \setlength{\parskip}{0.05em}
+    {\setlength\parskip{0.6em}
     \setlength{\columnsep}{1.0cm}
     \begin{multicols}{2}[\setlength{\columnseprule}{0.9pt}]
     \@starttoc{toc}
     \end{multicols}
     }
+    }
+
 \setcounter{totalnumber}{4}
 \setcounter{topnumber}{2}
 \setcounter{bottomnumber}{2}
