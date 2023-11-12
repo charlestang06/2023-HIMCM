@@ -53,6 +53,7 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %% Assumption Table Numbering
 \newcounter{assumption}
 \newcommand{\nextassumption}{\refstepcounter{assumption}\arabic{assumption}}
@@ -61,6 +62,11 @@
 %% SMALL CAPS FONT
 \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{gray}{\scriptsize\arabic{FancyVerbLine}\hspace{8pt}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% CHANGE MARGINS
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 
 
 %% TITLE PAGE . SUMMARY PAGE FORMATTING
@@ -75,8 +81,9 @@
 \begin{center}
 {\fontfamily{cmr}\large\scshape\bfseries Summary}
 \end{center}
-
+\begin{changemargin}{0.5in}{0.5in} 
 \input{Sections/summary}
+\end{changemargin} 
 
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$
@@ -88,7 +95,6 @@
 % infographic, letter, etc.
 
 % \newpage
-
 \tableofcontents
 
 \newpage

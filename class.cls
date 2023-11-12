@@ -84,7 +84,8 @@
 
 \setlength\parskip{.5\baselineskip}
 \renewcommand\tableofcontents{%
-        \centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
+    
+    \centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
         \@mkboth{%
            \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
     \vskip 5ex%
@@ -96,6 +97,9 @@
     \end{multicols}
     }
     }
+    
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
 
 \setcounter{totalnumber}{4}
 \setcounter{topnumber}{2}

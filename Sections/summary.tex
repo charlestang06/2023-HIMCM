@@ -1,21 +1,17 @@
-Paragraph 1:
-  Hook (one sentence funny or pun)
+\textsc{We are here to "spread"} the news about dandelions and their effects on our environment. Problem A consists of two sub-tasks: modeling the spread of a single dandelion across a one-hectare plot of land for one year, and measuring the invasiveness of three foreign species with an invasive impact score model.
+  
+To model the spread of dandelions over a plot of land, we developed a \textit{Seed Agent Model}, which follows a dandelion's lifecycle from seed to plant to puffball. We decided to use the Brownian Motion Process to model dandelion movement due to wind, and treat seed growth and death as a stochastic agent-based problem, meaning each seed was treated independently. To adapt our model to specific regions and climates, we further developed a list of \textit{hyperparameters} which consider factors such as temperature, light, wind, consumers, and soil nutrients. 
 
-  Problem Restatement (two sentences per each problem part)
+By collecting historical data from three different regions, we were better able to to calibrate and simulate our \textit{Seed Agent Model} on three different climate regions: Clay, NY (temperate); Phoenix, AZ (arid); and Florida Keys, FL (tropical). Our results show that dandelion population growth tends to follow a similar cyclical trend year-over-year, where plant populations spike in their seed dispersal and blooming seasons and remain dormant otherwise, regardless of the climate of the region. However, different regional climates resulted in different blooming seasons, resulting in a final population of around \(500\) to \(900\) dandelion plants after one year. Lastly, we tested our model with a Monte Carlo sampling simulation (\(\pm 10\%\)) and a sensitivity analysis of all hyper-parameters, revealing that light levels and seed lifespans significantly affect dandelion growth.
 
-Paragraph 2:
-  Model 1 Summary (talk about process)
+When measuring the impact of an invasive species, the benefits and disadvantages of the species must be considered. In order to mathematically model this, we decided to split the perceived impact into two sections: ecological and economic impact. In terms of the dandelion's significance in the environment, we considered both the effect they have  
+% Paragraph 4-5:
+%   Model 2 Summary (process -- ecological vs economic)
 
-  Model 1 Results (talk about riveting observations)
+%   Model 2 Results (what we classified for each of them)
 
-  Model 1 Sensitivity and Analysis (talk about more important factor + Monte Carlo simulations)
+%   Model 2 DSD Generalization (overview and how this can help)
 
-Paragraph 3:
-  Model 2 Summary (process -- ecological vs economic)
+% Paragraph 6:
+%   Main Takeaway (Big Ideas) (3-4 sentences)
 
-  Model 2 Results (what we classified for each of them)
-
-  Model 2 DSD Generalization (overview and how this can help)
-
-Paragraph 4:
-  Main Takeaway (Big Ideas) (3-4 sentences)
