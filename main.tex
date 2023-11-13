@@ -29,12 +29,15 @@
 \usepackage[numbib,nottoc]{tocbibind}
 \usepackage[svgnames]{xcolor}
 \usepackage{multicol}
+\usepackage[none]{hyphenat}
+\usepackage{ragged2e}
+
 
 %%% BIB SPACING
 \usepackage{bibspacing}
 \setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
 
-%for unknown reason, including the following packages changes the style of the contents section
+%for unknown reason, including the following packa4ges changes the style of the contents section
 % \usepackage{multicol}
 % \usepackage{tocloft}
 % \usepackage{titletoc}
@@ -63,13 +66,15 @@
 \renewcommand{\theFancyVerbLine}{\sffamily\textcolor{gray}{\scriptsize\arabic{FancyVerbLine}\hspace{8pt}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%% CHANGE MARGINS
+%%%% CHANGE MARGINS COMMAND %%%%%
 
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist 
 
+%%%%%%%%%%
 
-%% TITLE PAGE . SUMMARY PAGE FORMATTING
+
+%% TITLE PAGE. SUMMARY PAGE FORMATTING
 \titleformat{\section}[block]
 {\fontfamily{cmr}\centering\large\scshape\bfseries}{\thesection}{1em}{}
 \titlespacing*{\section}
@@ -78,13 +83,13 @@
 \begin{document}
 \begin{abstract}
 
+%%%% SUMMARY PAGE %%%%%
 \begin{center}
 {\fontfamily{cmr}\large\scshape\bfseries Summary}
 \end{center}
-\begin{changemargin}{0.5in}{0.5in} 
+\begin{changemargin}{0.3in}{0.3in} 
 \input{Sections/summary}
 \end{changemargin} 
-
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%$
 
@@ -95,26 +100,37 @@
 % infographic, letter, etc.
 
 % \newpage
+
+%%% TABLE OF CONTENTS %%%%
+
+
+\begin{changemargin}{0.3in}{0.3in}
+{%\baselineskip=20pt
 \tableofcontents
+}
+\end{changemargin}
+
+\setlength{\parskip}{0.05em}
 
 \newpage
-
 \input{Sections/introduction}
 
-%% MODEL 1
+%% MODEL 1 %%
 \input{Sections/model1method}
 
 \input{Sections/model1results}
 
 \input{Sections/model1discussion}
 
-%% MODEL 2
+%% MODEL 2 %% 
 
 \input{Sections/model2method}
 
 \input{Sections/model2results}
 
 \input{Sections/model2discussion}
+
+%%%%%%%%%%%%%%%%%%%%%
 
 \input{Sections/conclusion}
 
@@ -129,7 +145,6 @@
 \pagebreak
 
 \input{Sections/appendix}
-
 \end{document}
 
 

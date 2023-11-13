@@ -51,9 +51,9 @@ Below is a table of variables used throughout our agent-based model.
     \textbf{Variable}           & \textbf{Symbol} & \textbf{Description}  \\ \midrule
     \raggedright Time Step & $t$  & Each time step is a day where \(t = 0\) is January 1 of a year. \\
     \rowcolor{gray!15}
-    \raggedright Number of Moves & $N$  & Number of moves a seed takes in movement process. \\
+    \raggedright Number of Moves & $N$  & Number of moves a seed takes in its movement process. \\
     Coordinate Shift & $\Delta x, \Delta y$    &  Change in \(x\) or \(y\) coordinate of a seed in every move.  \\
-    \rowcolor{gray!15} \raggedright  Death Date & $D$               &  Time of death of a seed, sampled from Exponential distribution.  \\
+    \rowcolor{gray!15} \raggedright  Death Date & $D$               &  Time of death of a seed, sampled from an Exponential distribution.  \\
     \raggedright Plant Growth & $G$ & The stage of growth of a dandelion plant between 0 and 1. \\
     \rowcolor{gray!15} \raggedright Temperature Index & $T_I$ & A standardized metric to describe optimal temperatures for dandelions. \\
     \raggedright Light Index & $L_I$ & A standardized metric to describe optimal light levels for dandelions. \\
@@ -129,7 +129,7 @@ Because the seed germination stage is relatively shorter than the much longer pl
 
 \subsubsection{Phase 1: Seed Germination}
 
-To obtain the time for a seed to germinate, we sample from a \(\text{Normal } (\mu_{\text{germination}}(t), \sigma^2)\) distribution. Note that the mean duration of seed germination varies with regard to the climate and region \cite{board_of_pesticides_control_maine_dacf_dandelion-taraxacum_nodate}. Because seeds usually have different expected lifespans than dandelion plants, we assign a new death date from the seed survival distribution with a new hyperparameter \(\lambda_d(t)\) after every seed germination.
+To obtain the time for a seed to germinate, we sample from a \(\text{Normal } (\mu_{\text{germination}}(t), \sigma^2)\) distribution. Note that the mean duration of seed germination varies with regard to the climate and region \cite{board_of_pesticides_control_maine_dacf_dandelion-taraxacum_nodate}. Because seeds usually have different expected lifespans than dandelion plants, we assign a new death date from the seed survival distribution with a new hyperparameter \(\lambda_d(t)\) after each seed germinates.
 
 \subsubsection{Phase 2: Plant Development}
 
@@ -174,7 +174,7 @@ Lastly, we define the soil \textit{nutrition index} \(N_I: (k(t),n(t)) \longrigh
 \end{quote}
 
 
-Using the three indices from above (Equations~\ref{eq:tempindex},~\ref{eq:lightindex},~\ref{eq:nutritionindex}), we formulate the change in growth, \(\frac{dG(}{dt}(t)\) at time step \(t\) by scaling the sum of \(T_I\), \(L_I\), and \(N_I\) to match the time to fully grow a dandelion under optimal conditions (minimum 50 days) \cite{gardeningknowhowDandelionHarvest}. Furthermore, we scale the sum of the indices by \(\frac{1}{3}\) to return to the -1 to 1 scale, and another \(\frac{1}{50}\) as optimal growing conditions (minimum 50 days) would result in \(\frac{dG}{dt} = \frac{1}{50}\). Therefore, we define \(\frac{dG}{dt}(t)\) as,
+Using the three indices from above (Equations~\ref{eq:tempindex},~\ref{eq:lightindex},~\ref{eq:nutritionindex}), we formulate the change in growth, \(\frac{dG(}{dt}(t)\) at time step \(t\) by scaling the sum of \(T_I\), \(L_I\), and \(N_I\) to match the time to fully grow a dandelion under optimal conditions (minimum 50 days) \cite{gardeningknowhowDandelionHarvest}. Furthermore, we scale the sum of the indices by \(\frac{1}{3}\) to return to the -1 to 1 scale and another \(\frac{1}{50}\) as optimal growing conditions (minimum 50 days) would result in \(\frac{dG}{dt} = \frac{1}{50}\). Therefore, we define \(\frac{dG}{dt}(t)\) as,
 
 \begin{align}
     \frac{dG}{dt}(t) = \frac{1}{3 \cdot 50}\left(T_I+L_I+N_I\right) \\
@@ -195,7 +195,7 @@ Our method of modeling the spread of dandelions from an agent-based perspective 
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[scale=0.8]{figures/seedspreadprocess2.pdf}
+    \includegraphics[scale=0.82]{figures/seedspreadprocess3.pdf}
     \captionsetup{width=0.9\textwidth}
     \caption{\textbf{Overview diagram of seed spread modeling.} }
     \label{fig:partadiagram}

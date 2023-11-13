@@ -84,22 +84,19 @@
 
 \setlength\parskip{.5\baselineskip}
 \renewcommand\tableofcontents{%
-    
-    \centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
+\vspace*{1ex}
+\centerline{\normalfont\scshape\normalsize\bfseries\rmfamily\fontfamily{cmr}\centering\large\scshape\bfseries\contentsname
         \@mkboth{%
            \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
     \vskip 5ex%
     \setlength{\parskip}{0.05em}
-    {\setlength\parskip{0.6em}
+    {\setlength\parskip{0.35em} %%% CHANGE SPACING IN TOC HEADERS
     \setlength{\columnsep}{1.0cm}
     \begin{multicols}{2}[\setlength{\columnseprule}{0.9pt}]
     \@starttoc{toc}
     \end{multicols}
     }
-    }
-    
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
+}
 
 \setcounter{totalnumber}{4}
 \setcounter{topnumber}{2}

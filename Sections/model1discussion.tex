@@ -42,16 +42,16 @@ In Figure~\ref{fig:sensitivitypopulation}, we demonstrate how, despite changes i
 To numerically analyze our results from Figure \ref{fig:sensitivitypopulation}, we analyzed the average Root-mean squared error (RMSE) between each factor's Monte Carlo simulation and our simulation with default conditions applied. The RMSE formula is commonly used in time-series analysis to determine the average deviation of a new time series from a ground-truth series \cite{calzone_mae_2022}. 
 
 \begin{equation}
-    \text{RMSE} = \sqrt{\frac{1}{N}\sum\limits_{i=1}^{n} \left(x_{\text{new}_i} - x_{\text{ground truth}_i}\right)^2}
+    \text{RMSE} = \sqrt{\frac{1}{N}\sum\limits_{i=1}^{N} \left(x_{\text{new}_i} - x_{\text{ground truth}_i}\right)^2}
 \end{equation}
 
 Using the formula for RMSE where \(N\) is the number of entries compared, we scaled each of these errors between \(0\) and \(1\) using min-max scaling and displayed our sensitivity analysis results in the radar chart below. Based on our analysis, light levels and seed lifespan have the most significant impacts on dandelion population growth (See Figure~\ref{fig:radarchart1}), which is consistent with findings from field observations \cite{chepil_germination_1946}.
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[scale=0.6]{figures/radarchart1.pdf}
+    \includegraphics[scale=0.6]{figures/radarchart2.pdf}
     \captionsetup{width=0.9\textwidth}
-    \caption{\textbf{Radar Chart of Model Hyperparameters.} The two most impactful factors of our model were the light levels and seed lifespan in the soil.} 
+    \caption{\textbf{Radar chart of model hyperparameters.} The two most impactful factors of our model were light levels and seed lifespan, but nutrient levels were least significant.} 
     \label{fig:radarchart1}
 \end{figure}
 
